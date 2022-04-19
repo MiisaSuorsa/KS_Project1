@@ -54,7 +54,7 @@ void readFile (char* input){
                printf("%s", line);
                
                if ((pNew = (struct lines*) malloc(sizeof(struct lines))) == NULL ){
-               	fprintf(stderr, "error: cannot ");
+               	fprintf(stderr, "error: malloc failed ");
 			exit(1);
                }
                
@@ -100,7 +100,7 @@ void writeFile (char* output){
 		printf("Linked List stored in the file successfully\n");
 	}
 	else {
-		printf("Error While Writing\n");
+		fprintf(stderr, "Error While Writing\n");
 	}
     
 	fclose(file);
@@ -115,3 +115,4 @@ void freeMemory (){
 		free(ptr);
 	}
 }
+
